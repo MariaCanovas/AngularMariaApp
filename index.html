@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/styles.css" rel="stylesheet"/>	
+	</head>
+
+	<body ng-app='mariaApp'>
+		<div class="cuerpo" ng-controller="mainController">
+			<div class="cabecera">
+				<div class="nombre"> {{ name }}</div>
+				<div id="reloj" class="reloj"> </div>
+			</div>
+
+			<div class="add">
+					<form ng-submit = "addTarea()">
+						<input class="input" type="text" ng-model="tarea" placeholder="Agregar nueva cosa por hacer">
+						<button class="boton" ng-click="addTarea()"><span class="texto-boton"> Add </span></button>
+					</form>
+			</div>
+
+				<div class="listaTareas" ng-repeat = "tarea in tareas">
+					<input type="checkbox" ng-model="tarea.hecho"/>
+					<span class="hecho">{{tarea.text}} </span>
+				</div>
+		</div> 
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="js/controllers/mainController.js"></script>
+</html>

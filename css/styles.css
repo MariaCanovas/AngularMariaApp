@@ -1,0 +1,52 @@
+.nombre {
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 2em;
+}
+.listaTareas {
+	border:none;
+	width: 100%;
+	font-family: "Agency FB";
+	font-size: 2.5em;
+	float:left;
+	background-color: #0C365D;
+}
+.input {
+	background-color: #C3DDF5;
+    border:none;
+    float:left;
+    padding: 20px 0px;    
+    width: 65%;
+    height: 100%;
+    font-family: "Agency FB";
+	font-weight: bold;
+	font-size: 2.5em;
+}
+.boton {
+	border: none;
+	border-bottom: 0px;
+	width: 35%;
+	height: 88px;
+	padding: 0px;
+	background-color: #002D57;
+	font-family: "Agency FB";
+	font-weight: bold;
+	font-size: 2.5em;
+}
+.cabecera {
+	background-color: #2B95F3;
+	height: 80px;
+}
+.add{
+	max-width: 100%;
+	height: 100%;
+
+}
+
+.reloj {
+	left:400px;
+	right: 10px;
+}
+.name {
+	align-self: left;
+}
