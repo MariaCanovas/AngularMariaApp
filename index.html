@@ -8,13 +8,13 @@
 		<div class="cuerpo" ng-controller="mainController">
 			<div class="cabecera">
 				<div class="nombre"> {{ name }}</div>
-				<div id="reloj" class="reloj"> </div>
+				<div class="reloj">{{hora | date:'HH:mm:ss'}}</div>
 			</div>
 
 			<div class="add">
 					<form>
 						<input class="input" type="text" ng-model="tarea" placeholder="Agregar nueva cosa por hacer">
-						<button class="boton" ng-click="addTarea()"><span class="texto-boton"> Add</span></button>
+						<button class="boton" ng-click="addTarea()"><span class="texto-boton"> Agregar </span></button>
 					</form>
 			</div>
 
