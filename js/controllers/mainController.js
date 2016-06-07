@@ -7,7 +7,7 @@
         .controller('mainController', mainController);
 
 
-     function mainController($scope){
+     function mainController($scope, $timeout){
 
 	   	$scope.tareas = [{text:'Aprender AngulaJS', hecho:false}];
 	    
