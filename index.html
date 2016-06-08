@@ -6,7 +6,6 @@
 	
 	<body id="body" ng-app='mariaApp'>
 		<div class="cuerpo" ng-controller="mainController">
-			<div ng-init="init()"/>
 			<div class="cabecera">
 				<div class="nombre"> {{ name }}</div>
 				<div class="reloj">{{ horas | fix }} : {{minutos | fix}} : {{ segundos | fix }}</div>
@@ -18,8 +17,8 @@
 			</div>
 
 			<div class="listaTareas" ng-repeat = "tarea in tareas track by $index">
-				<input type="checkbox" ng-model="tarea.hecho" ng-click/>
-				<span ng-class="{hecho: tarea.hecho == true}">{{$index}} -  {{tarea.text}}</span>
+				<input type="checkbox" ng-model="tarea.hecho" ng-click='setDone($index)'/>
+				<span ng-class="{hecho: tarea.hecho == true}"> {{tarea.text}}</span>
 			</div>
 			<button class="botonBorrar" ng-click="borrar()">Borrar tareas completas</button>
 		</div> 
