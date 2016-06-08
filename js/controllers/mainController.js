@@ -7,16 +7,16 @@
         .controller('mainController', mainController);
 
 
-     function mainController($scope, $interval){
+     function mainController($scope, $interval, localStorage){
 
-     	$scope.name = "Maria Dolores";
-	   	$scope.tareas = [{text:'Aprender AngulaJS', hecho:false}];
-	    $scope.hora = new Date();
-	    $scope.segundos = $scope.hora.getSeconds();
-	    $scope.minutos = $scope.hora.getMinutes();
-	    $scope.horas = $scope.hora.getHours();
+     	$scope.init = function(){
+     		$scope.name = "Maria Dolores";
+		    $scope.hora = new Date();
+		    $scope.segundos = $scope.hora.getSeconds();
+		    $scope.minutos = $scope.hora.getMinutes();
+		    $scope.horas = $scope.hora.getHours();
 
-	    $interval(function() {
+		    $interval(function() {
 			$scope.actualizarSegundo();
 		}, 1000);
 
@@ -25,9 +25,7 @@
 	    	if($scope.segundos == 60){
 	    		$scope.segundos = 0;
 	    		$scope.actualizarMinuto();
-
 	    	}
-	    	
 	    };
 	    $scope.actualizarMinuto = function(){
 	    	$scope.minutos += 1;
@@ -35,7 +33,6 @@
 	    		$scope.minutos = 0;
 	    		$scope.actualizarHora();
 	    	}
-	    	
 	    };
 	    $scope.actualizarHora = function(){
 	    	$scope.horas += 1;
@@ -43,11 +40,38 @@
 	    		$scope.horas = 0;
 	    	}
 	    };
+	    $scope.cargarMemoria();
+
+     	};
+       	$scope.cargarMemoria = function(){
+       		$scope.tareas = JSON.parse(localStorage.getAll());
+       		//$scope.tareas = localStorage.getAll();
+
+       		//console.log($scope.tareas);
+	    };
+	    $scope.posicion = 0;
+	    
 	    $scope.addTarea = function() {
-	        $scope.tareas.push({text:$scope.tarea, hecho:false});
+	    	var task = {
+	    		text: $scope.tarea,
+	    		hecho: false
+	    	};
+	    	$scope.tareas.push(task);
+	    	localStorage.set($scope.tareas.length, JSON.stringify(task));
+	    	
+	        //localStorage.set($scope.tareas.length, task);
+	        //$scope.tareas.push(task);
 	        $scope.tarea = "";
 	    };
-    
+	    $scope.borrar = function() {
+			var tareasAnteriores = $scope.tareas;
+			$scope.tareas = [];
+			angular.forEach(tareasAnteriores, function(tareas){
+				if ($scope.tarea.hecho === false)
+					$scope.tareas.push(tareas);
+		});
+		localStorage.set($scope.tareas.length, JSON.stringify($scope.tareas));
+	};
 	}
 	angular.module('mariaApp').filter('fix', function() {
 	    	return function(elemento){
@@ -57,5 +81,4 @@
 	    		return elemento;
 	    	}; 	
 	    });
-
 }());
