@@ -2,10 +2,7 @@
 (function () {
     'use strict';
 
-    
-
-
-    var moduleDependencies = ['mariaApp.directive'];
+    var moduleDependencies = ['mariaApp.directive', 'mariaApp.listaDirective'];
 
     angular.module('mariaApp', moduleDependencies)
         .controller('mainController', mainController);
@@ -27,7 +24,7 @@
 		vm.init();
      	//Init
      	function init(){
-     		vm.fecha = new Date('12/12/2016 12:00');
+     		vm.fecha = new Date();
      		asignarNombre();
 		    vm.cargarMemoria();
 		}

@@ -18,15 +18,18 @@
 
 			<div class="listaTareas" ng-repeat = "tarea in tareas track by $index">
 				<input type="checkbox" ng-model="tarea.hecho" ng-click='setDone($index)'/>
-				<span ng-class="{hecho: tarea.hecho == true}"> {{tarea.text | fix}}</span>
+				<span ng-class="{hecho: tarea.hecho == true}"> {{tarea.text}}</span>
 			</div>
 			<button class="botonBorrar" ng-click="borrarMemoria()">Borrar toda la lista de tareas</button>
 		</div> 
 	</body>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
+	
+	<script src="js/filters/filters.js"></script>
 	<script src="js/Directives/relojDirective.js"></script>
+	<script src="js/Directives/listaDirective.js"></script>
 	<script src="js/controllers/mainController.js"></script>
 	<script src="js/services/localStorage.js"></script>
+
 	
 </html>
