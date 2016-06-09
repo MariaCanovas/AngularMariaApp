@@ -1,6 +1,10 @@
 /*global  angular*/
 (function () {
     'use strict';
+
+    
+
+
     var moduleDependencies = ['mariaApp.directive'];
 
     angular.module('mariaApp', moduleDependencies)
@@ -13,15 +17,17 @@
      	// Funciones publicas:
      	vm.init = init;
      	vm.cargarMemoria = cargarMemoria;
-     	vm.fecha = new Date();
-		vm.addTarea = addTarea;
-		vm.setDone = setDone;
-		vm.borrar = borrar;
+     	
+     	vm.addTarea = addTarea;
+        vm.setDone = setDone;
+        vm.borrar = borrar;
+		
 
      	// Arrancar
 		vm.init();
      	//Init
      	function init(){
+     		vm.fecha = new Date('12/12/2016 12:00');
      		asignarNombre();
 		    vm.cargarMemoria();
 		}
@@ -50,23 +56,17 @@
 	    	localStorage.set('tareas-' + index, task);
 	    }
 
-	    function borrar() {
+	    function borrar(index) {
 			var tareasAnteriores = vm.tareas;
 			vm.tareas = [];
-			angular.forEach(tareasAnteriores, function(tareas){
-				if (vm.tarea.hecho === false)
-					vm.tareas.push(tareas);
+			angular.forEach(tareasAnteriores, function(){
+				if (vm.tarea.hecho === true)
+					vm.tareas.splice(tareasAnteriores);
 			});
+			localStorage.set('tareas-' + index, tareasAnteriores);
 
 		}
 	}
 
-	angular.module('mariaApp').filter('fix', function() {
-	    	return function(elemento){
-	    		if(elemento < 10){
-	    			return "0" + elemento;
-	    		}
-	    		return elemento;
-	    	}; 	
-	    });
+	
 }());
