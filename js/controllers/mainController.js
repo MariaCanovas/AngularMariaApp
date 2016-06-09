@@ -1,23 +1,22 @@
 /*global  angular*/
 (function () {
     'use strict';
-    var moduleDependencies = [];
+    var moduleDependencies = ['mariaApp.directive'];
 
     angular.module('mariaApp', moduleDependencies)
         .controller('mainController', mainController);
 
 
-     function mainController($scope, localStorage){
+    function mainController($scope, localStorage){
      	var vm = $scope;
 
      	// Funciones publicas:
      	vm.init = init;
      	vm.cargarMemoria = cargarMemoria;
-     	
+     	vm.fecha = new Date();
 		vm.addTarea = addTarea;
 		vm.setDone = setDone;
 		vm.borrar = borrar;
-
 
      	// Arrancar
 		vm.init();

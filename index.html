@@ -5,10 +5,10 @@
 	</head>
 	
 	<body id="body" ng-app='mariaApp'>
-		<div class="cuerpo" ng-controller="mainController">
+		<div class="cuerpo" ng-controller="mainController" >
 			<div class="cabecera">
 				<div class="nombre"> {{ name }}</div>
-				<reloj-directive></reloj-directive>
+				<reloj-directive class="reloj" fecha='fecha'></reloj-directive>
 			</div>
 
 			<div id ="add">
@@ -25,7 +25,8 @@
 	</body>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
+	<script src="js/Directives/relojDirective.js"></script>
 	<script src="js/controllers/mainController.js"></script>
 	<script src="js/services/localStorage.js"></script>
-	<script src="js/Directives/relojDirective.js"></script>
+	
 </html>
