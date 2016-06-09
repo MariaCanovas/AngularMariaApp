@@ -8,7 +8,7 @@
 		<div class="cuerpo" ng-controller="mainController">
 			<div class="cabecera">
 				<div class="nombre"> {{ name }}</div>
-				<div class="reloj">{{ horas | fix }} : {{minutos | fix}} : {{ segundos | fix }}</div>
+				<reloj-directive></reloj-directive>
 			</div>
 
 			<div id ="add">
@@ -27,4 +27,5 @@
 
 	<script src="js/controllers/mainController.js"></script>
 	<script src="js/services/localStorage.js"></script>
+	<script src="js/Directives/relojDirective.js"></script>
 </html>
