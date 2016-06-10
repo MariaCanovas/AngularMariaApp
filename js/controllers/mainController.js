@@ -31,7 +31,19 @@
 		function cargarMemoria(){
             vm.tareas = localStorage.getAll();
         }
-        
+
+        function agregar(){
+
+        }
+        function done(index){
+
+        	var task = vm.tareasDirectiva[index];
+            localStorage.set('tareas-' + index, task);
+
+        }
+        function borrar(){
+
+        }
 
 
 	}
