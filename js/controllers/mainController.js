@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    var moduleDependencies = ['mariaApp.directive', 'mariaApp.listaDirective'];
+    var moduleDependencies = ['mariaApp.directive'];
 
     angular.module('mariaApp', moduleDependencies)
         .controller('mainController', mainController);
