@@ -1,29 +1,30 @@
+body {
+	font-family: "Agency FB";
+	font-weight: bold;
+	height: 100%;
+	width:100%;
+}
 .cuerpo{
 	margin-top: 20px;
 	margin-right: 20%;
 	margin-left: 20%;
 }
 .cabecera {
+	position: relative;
 	background-color: #2B95F3;
 	margin-top: 10px;
 	height: 100px;
-	width: 100%;
 	font-size: 2em;
-	font-weight: bold;
+	text-align: center;	
+	line-height: 106px;
 }
 .nombre {
 	float: left;
-	width: 49%;
-	height: 100%;
-	font-family: "Arial";
-	text-align: right;	
-	line-height: 106px;
+	width: 50%;
     }
 .reloj {
 	float: right;
-	width: 49%;
-	height: 100%;
-	line-height: 106px;
+	width: 50%;
 }
 .input {
 	padding-left: 10px;
@@ -34,9 +35,6 @@
     margin-bottom: 20px;    
     width: 70%;
     height: 100%;
-    font-family: "Agency FB";
-	font-weight: bold;
-	font-size: 2.5em;
 }
 .botonAdd {
 	padding: 0;
@@ -45,9 +43,12 @@
 	height: 100%;
 	width: 27%;
 	background-color: #002D57;
-	font-family: "Agency FB";
 	font-weight: bold;
-	font-size: 2.5em;
+}
+button {
+	font-size: 20px;
+	padding: 15px;
+	color: #FFFFFF;
 }
 .botonBorrar {
 	float: right;
@@ -55,8 +56,6 @@
 	height: 50px;
 	border: none;
 	background-color: #0C365D;
-	font-family: "Agency FB";
-	font-size: 0.5em;
 }
 .botonBorrado {
 	padding: 0;
@@ -65,28 +64,30 @@
 	height: 100%;
 	width: 100%;
 	background-color: #002D57;
-	font-family: "Agency FB";
-	font-weight: bold;
-	font-size: 2.5em;
 }
-#add {
+.toDo {
+	position: absolute;
+	left:50%;
+	top:50%;
+	padding: 0px 10px 0px 10px;
+	border-radius: 100%;
+	border: 2px solid #000000;
+	line-height: 40px;
+}
+.add {
 	margin-top: 10px;
 	height: 50px;
-	width: 100%;
-
 }
 .listaTareas {
+	font-weight: normal;
 	margin-top: 0px;
 	border:2px;
 	width: 100%;
-	font-family: "Agency FB";
-	font-size: 2.5em;
+	font-size: 2.0em;
 	float: left;
 	background-color: #0C365D;
 }
 .hecho
 {
 	text-decoration: line-through;
-
-	
 }
