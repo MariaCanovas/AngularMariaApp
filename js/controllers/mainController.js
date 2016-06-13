@@ -36,17 +36,17 @@
             vm.tareas = localStorage.getAll();
         }
 
-        function agregar(newTask){
-            localStorage.set('tareas-' + vm.tareas.length, newTask);
+        function agregar(newId, newTask){
+            localStorage.set(newId, newTask);
             cargarMemoria();
         }
-        function done(indexUpdated, taskUpdated){
-            localStorage.set('tareas-' + indexUpdated, taskUpdated);
+        function done(idUpdated, taskUpdated){
+            localStorage.set(idUpdated, taskUpdated);
             cargarMemoria();
 
         }
-        function borrar(indexDeleted){
-            localStorage.removeItem('tareas-'+ indexDeleted);
+        function borrar(idDeleted){
+            localStorage.removeItem(idDeleted);
             cargarMemoria();
         }
         function borrarMemoria(){
