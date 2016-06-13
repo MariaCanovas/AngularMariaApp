@@ -11,9 +11,10 @@
 				<reloj-directive class="reloj" fecha='fecha'></reloj-directive>
 			</div>
 
-			<lista-directive getAll='getAll()' set='set(clave, valor)' tareas='tareas'>
+			<lista-directive done='done(indexUpdated, taskUpdated)' agregar='agregar(newTask)' borrar='borrar(indexDeleted)' tareas='tareas'>
 				
-		</lista-directive> 
+		</lista-directive>
+		<button class="botonBorrado" ng-click="borrarMemoria()"> Borrar toda la lista</button> 
 	</body>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	

@@ -13,6 +13,10 @@
      	// Funciones publicas:
      	vm.init = init;
      	vm.cargarMemoria = cargarMemoria;
+        vm.agregar = agregar;
+        vm.done = done;
+        vm.borrar = borrar;
+        vm.borrarMemoria = borrarMemoria;
 
      	//Init
      	function init(){
@@ -32,16 +36,22 @@
             vm.tareas = localStorage.getAll();
         }
 
-        function agregar(){
+        function agregar(newTask){
+            localStorage.set('tareas-' + vm.tareas.length, newTask);
+            cargarMemoria();
+        }
+        function done(indexUpdated, taskUpdated){
+            localStorage.set('tareas-' + indexUpdated, taskUpdated);
+            cargarMemoria();
 
         }
-        function done(index){
-
-        	var task = vm.tareasDirectiva[index];
-            localStorage.set('tareas-' + index, task);
-
+        function borrar(indexDeleted){
+            localStorage.removeItem('tareas-'+ indexDeleted);
+            cargarMemoria();
         }
-        function borrar(){
+        function borrarMemoria(){
+            localStorage.remove();
+            cargarMemoria();
 
         }
 
