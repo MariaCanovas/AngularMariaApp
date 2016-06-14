@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="css/styles.css" rel="stylesheet"/>	
+		<link href="concatFiles/estilos.css" rel="stylesheet"/>	
 	</head>
 	
-	<body id="body" ng-app='mariaApp'>
+	<body ng-app='mariaApp'>
 		<div class="cuerpo" ng-controller="mainController" >
 			<div class="cabecera">
 				<div class="nombre"> {{ name }}</div>
@@ -12,8 +12,8 @@
 				<div class="toDo">{{toDoTasks}}</div>
 			</div>
 			<lista-directive done='done(idUpdated, taskUpdated)' agregar='agregar(newId, newTask)' borrar='borrar(idDeleted)' tareas='tareas'></lista-directive>
-		<button class="botonBorrado" ng-click="borrarMemoria()"> Borrar toda la lista</button> 
+			<button class="botonBorrado" ng-click="borrarMemoria()"> Borrar toda la lista</button> 
+		</div>
 	</body>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="concatFiles/main.js"></script>
 </html>

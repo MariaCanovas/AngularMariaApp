@@ -1,13 +1,15 @@
 {
   "name": "gulp-primeros-pasos",
   "version": "1.0.0",
-  "description": "Gulp Primeros pasos",
+  "description": "This is a simple ToDo List using angularJs. It is possible to add new tasks to the list and save it in the local storage.",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^1.5.3"
+    "gulp-minify": "0.0.12",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sass": "^2.3.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/MariaCanovas/AngularMariaApp.git"
   },
-  "author": "maria",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MariaCanovas/AngularMariaApp/issues"
