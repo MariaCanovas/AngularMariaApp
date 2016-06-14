@@ -11,19 +11,9 @@
 				<reloj-directive class="reloj" fecha='fecha'></reloj-directive>
 				<div class="toDo">{{toDoTasks}}</div>
 			</div>
-
-			<lista-directive done='done(idUpdated, taskUpdated)' agregar='agregar(newId, newTask)' borrar='borrar(idDeleted)' tareas='tareas'>
-				
-		</lista-directive>
+			<lista-directive done='done(idUpdated, taskUpdated)' agregar='agregar(newId, newTask)' borrar='borrar(idDeleted)' tareas='tareas'></lista-directive>
 		<button class="botonBorrado" ng-click="borrarMemoria()"> Borrar toda la lista</button> 
 	</body>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	
-	<script src="js/filters/filters.js"></script>
-	<script src="js/Directives/relojDirective.js"></script>
-	<script src="js/Directives/listaDirective.js"></script>
-	<script src="js/controllers/mainController.js"></script>
-	<script src="js/services/localStorage.js"></script>
-
-	
+	<script src="concatFiles/main.js"></script>
 </html>

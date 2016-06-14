@@ -34,7 +34,6 @@
 		}
 		function cargarMemoria(){
             vm.tareas = localStorage.getAll();
-            console.log(vm.tareas[0].hecho);
             toDoTasks();
         }
 
