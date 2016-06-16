@@ -1,29 +1,18 @@
 'use strict';
 
-var gulp = require('gulp'),
-	concat = require('gulp-concat'),
-	minify = require('gulp-minify'),
-	sass = require('gulp-sass');
+var gulp = require ('gulp'),
+    requireDir  = require('require-dir'),
+    config = require('./gulp_tasks/config');
 
-gulp.task('concat', function() {
-	return gulp.src(['bower_components/angular/angular.js','js/controllers/mainController.js', 'js/directives/listaDirective.js', 'js/directives/relojDirective.js', 'js/filters/filters.js', 'js/services/localStorage.js'])
-	.pipe(concat('main.js'))
-	.pipe(gulp.dest('concatFiles/'));
+requireDir('./gulp_tasks');
+
+gulp.task('default', function() {
+	gulp.watch(config.js.srcToWatch, ['concat'])
+		.on('change', logWatch);
+	gulp.watch(config.sass.srcToWatch, ['sass'])
+		.on('change', logWatch);
 });
 
-gulp.task('minify', function() {
-	gulp.src('concatFiles/main.js')
-	.pipe(minify({
-		ext:{
-			src:'.js',
-			min: '.min.js'
-		}
-		}))
-	.pipe(gulp.dest('concatFiles'));
-});
-
-gulp.task('sass',function(){
-    return gulp.src('css/estilos.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('concatFiles/'));
-});
+function logWatch(event) {
+	console.log('*** File ' + event.path + 'was' + event.type + ', running tasks...');
+}

@@ -17,6 +17,7 @@
         vm.done = done;
         vm.borrar = borrar;
         vm.borrarMemoria = borrarMemoria;
+        vm.asignarNombre = asignarNombre;
 
      	//Init
      	function init(){
@@ -24,19 +25,17 @@
      		asignarNombre();
      		cargarMemoria();
 		}
-
 		// Arrancar
 		vm.init();
 
 		// Funciones publicas:
 		function asignarNombre(){
-			vm.name = "Maria Dolores";
-		}
+            vm.name = "Maria Dolores";
+        }
 		function cargarMemoria(){
             vm.tareas = localStorage.getAll();
             toDoTasks();
         }
-
         function agregar(newId, newTask){
             localStorage.set(newId, newTask);
             cargarMemoria();

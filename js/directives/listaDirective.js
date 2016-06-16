@@ -57,11 +57,9 @@
                     text: texto,
                     hecho: done,
                     id: id
-
                 };
                 vm.done({idUpdated: id, taskUpdated: task});
             }
-
             function deleteTask(id) {
                 vm.borrar({idDeleted: id});
                               

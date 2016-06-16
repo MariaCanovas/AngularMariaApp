@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "description": "This is a simple ToDo List using angularJs. It is possible to add new tasks to the list and save it in the local storage.",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-minify": "0.0.12",
     "gulp-ruby-sass": "^2.0.6",
-    "gulp-sass": "^2.3.1"
+    "gulp-sass": "^2.3.1",
+    "gulp-watch": "^4.3.6",
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "require-dir": "^0.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
