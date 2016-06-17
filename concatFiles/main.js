@@ -34143,7 +34143,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
     angular.module('mariaApp', moduleDependencies)
         .controller('mainController', mainController);
 
-    function mainController($scope,localStorage){
+    function mainController($scope,localStorageSrv){
      	var vm = $scope;
 
      	// Funciones publicas:
@@ -34154,7 +34154,6 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
         vm.borrar = borrar;
         vm.borrarMemoria = borrarMemoria;
         vm.asignarNombre = asignarNombre;
-        vm.toDoTasks = toDoTasks;
 
      	//Init
      	function init(){
@@ -34162,7 +34161,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
      		asignarNombre();
      		cargarMemoria();
 		}
-		// Arrancar
+		// Arrancarbo
 		vm.init();
 
 		// Funciones publicas:
@@ -34170,25 +34169,24 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
             vm.name = "Maria Dolores";
         }
 		function cargarMemoria(){
-            vm.tareas = localStorage.getAll();
+            vm.tareas = localStorageSrv.getAll();
             toDoTasks();
         }
-
         function agregar(newId, newTask){
-            localStorage.set(newId, newTask);
+            localStorageSrv.set(newId, newTask);
             cargarMemoria();
         }
         function done(idUpdated, taskUpdated){
-            localStorage.set(idUpdated, taskUpdated);
+            localStorageSrv.set(idUpdated, taskUpdated);
             cargarMemoria();
 
         }
         function borrar(idDeleted){
-            localStorage.removeItem(idDeleted);
+            localStorageSrv.removeItem(idDeleted);
             cargarMemoria();
         }
         function borrarMemoria(){
-            localStorage.remove();
+            localStorageSrv.remove();
             cargarMemoria();
 
         }
@@ -34356,7 +34354,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
     'use strict';
     angular
         .module('mariaApp')
-        .service('localStorage', service);
+        .service('localStorageSrv', service);
 
         function service() {
 
@@ -34385,8 +34383,8 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
                 localStorage.clear();
             }
             function removeItem(id){
+                console.log('entra al service');
                 localStorage.removeItem(id);
-
             }
 
         }

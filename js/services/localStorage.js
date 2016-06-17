@@ -2,7 +2,7 @@
     'use strict';
     angular
         .module('mariaApp')
-        .service('localStorage', service);
+        .service('localStorageSrv', service);
 
         function service() {
 
@@ -31,8 +31,8 @@
                 localStorage.clear();
             }
             function removeItem(id){
+                console.log('entra al service');
                 localStorage.removeItem(id);
-
             }
 
         }
