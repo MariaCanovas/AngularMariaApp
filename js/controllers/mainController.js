@@ -42,7 +42,7 @@
         }
         function done(idUpdated, taskUpdated){
             localStorageSrv.set(idUpdated, taskUpdated);
-            cargarMemoria();
+            cargarMemoria();        
 
         }
         function borrar(idDeleted){

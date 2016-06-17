@@ -34178,7 +34178,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
         }
         function done(idUpdated, taskUpdated){
             localStorageSrv.set(idUpdated, taskUpdated);
-            cargarMemoria();
+            cargarMemoria();        
 
         }
         function borrar(idDeleted){
@@ -34287,7 +34287,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
             controllerAs: 'vm',
             bindToController: true,
             scope: {
-                fecha : '='
+                //fecha : '='
             }
         };
         return ddo;
@@ -34305,6 +34305,8 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
 
             // Private functions:
             function actualizarReloj(){
+                console.log('fecha:', vm.fecha);
+                
                 vm.segundos = vm.fecha.getSeconds();
                 vm.minutos = vm.fecha.getMinutes();
                 vm.horas = vm.fecha.getHours();

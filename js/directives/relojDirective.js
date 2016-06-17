@@ -14,7 +14,7 @@
             controllerAs: 'vm',
             bindToController: true,
             scope: {
-                fecha : '='
+                //fecha : '='
             }
         };
         return ddo;
@@ -32,6 +32,8 @@
 
             // Private functions:
             function actualizarReloj(){
+                console.log('fecha:', vm.fecha);
+                
                 vm.segundos = vm.fecha.getSeconds();
                 vm.minutos = vm.fecha.getMinutes();
                 vm.horas = vm.fecha.getHours();
