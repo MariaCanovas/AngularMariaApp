@@ -34162,7 +34162,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
      		asignarNombre();
      		cargarMemoria();
 		}
-		// Arrancarbo
+		// Arrancarlo
 		vm.init();
 
 		// Funciones publicas:
@@ -34180,7 +34180,6 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
         function done(idUpdated, taskUpdated){
             localStorageSrv.set(idUpdated, taskUpdated);
             cargarMemoria();        
-
         }
         function borrar(idDeleted){
             localStorageSrv.removeItem(idDeleted);
@@ -34189,7 +34188,6 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
         function borrarMemoria(){
             localStorageSrv.remove();
             cargarMemoria();
-
         }
         function toDoTasks(){
             vm.toDoTasks = 0;
@@ -34283,10 +34281,11 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
   
     function RelojController($interval) {
             var vm = this;
-            var segundos;
             // Public functions:
             vm.init = init;
             vm.actualizarSegundo = actualizarSegundo;
+            vm.actualizarMinuto = actualizarMinuto;
+            vm.actualizarHora = actualizarHora;
          
             function init() {
                 actualizarReloj();
@@ -34300,29 +34299,33 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
                 vm.horas = vm.fecha.getHours();
 
                 $interval(function() {
-                    actualizarSegundo();
+                    if(vm.initReloj === true) {
+                        vm.segundos = actualizarSegundo(vm.segundos);
+                    }
                 }, 1000);
             }
             function actualizarSegundo(segundos){
                 segundos += 1;
                 if(segundos == 60){
                     segundos = 0;
-                    actualizarMinuto();
+                    vm.minutos = actualizarMinuto(vm.minutos);
                 }
                 return segundos;
             }
-            function actualizarMinuto(){
-                vm.minutos += 1;
-                if(vm.minutos == 60){
-                    vm.minutos = 0;
-                    actualizarHora();
+            function actualizarMinuto(minutos){
+                minutos += 1;
+                if(minutos == 60){
+                    minutos = 0;
+                    vm.horas = actualizarHora(vm.horas);
                 }
+                return minutos;
             }
-            function actualizarHora(){
-                vm.horas += 1;
-                if(vm.horas == 24){
-                    vm.horas = 0;
+            function actualizarHora(horas){
+                horas += 1;
+                if(horas == 24){
+                    horas = 0;
                 }
+                return horas;
             }
         }
 
@@ -34336,7 +34339,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
             bindToController: true,
             scope: {
                 fecha : '=',
-                initReloj: '='
+                initReloj : '='
             }
         };
         return ddo;

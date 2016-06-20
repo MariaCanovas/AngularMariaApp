@@ -26,7 +26,7 @@
      		asignarNombre();
      		cargarMemoria();
 		}
-		// Arrancarbo
+		// Arrancarlo
 		vm.init();
 
 		// Funciones publicas:
@@ -44,7 +44,6 @@
         function done(idUpdated, taskUpdated){
             localStorageSrv.set(idUpdated, taskUpdated);
             cargarMemoria();        
-
         }
         function borrar(idDeleted){
             localStorageSrv.removeItem(idDeleted);
@@ -53,7 +52,6 @@
         function borrarMemoria(){
             localStorageSrv.remove();
             cargarMemoria();
-
         }
         function toDoTasks(){
             vm.toDoTasks = 0;
