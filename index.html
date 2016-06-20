@@ -8,7 +8,7 @@
 		<div class="cuerpo" ng-controller="mainController" >
 			<div class="cabecera">
 				<div class="nombre"> {{ name }}</div>
-				<reloj-directive class="reloj" fecha='fecha'></reloj-directive>
+				<reloj-directive class="reloj" fecha='fecha' initReloj = 'initReloj'></reloj-directive>
 				<div class="toDo">{{toDoTasks}}</div>
 			</div>
 			<lista-directive done='done(idUpdated, taskUpdated)' agregar='agregar(newId, newTask)' borrar='borrar(idDeleted)' tareas='tareas'></lista-directive>

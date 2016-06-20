@@ -22,6 +22,7 @@
      	//Init
      	function init(){
      		vm.fecha = new Date();
+            vm.initReloj = true;
      		asignarNombre();
      		cargarMemoria();
 		}
