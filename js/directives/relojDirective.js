@@ -14,7 +14,7 @@
             controllerAs: 'vm',
             bindToController: true,
             scope: {
-                //fecha : '='
+                fecha : '='
             }
         };
         return ddo;

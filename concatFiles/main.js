@@ -34287,7 +34287,7 @@ angular.mock.$RootScopeDecorator = ['$delegate', function($delegate) {
             controllerAs: 'vm',
             bindToController: true,
             scope: {
-                //fecha : '='
+                fecha : '='
             }
         };
         return ddo;
